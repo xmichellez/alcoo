@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React, { Component }  from 'react';
 import "./App.css";
+
+import HomepageBox from './components/homepageBox';
 
 class App extends Component {
   constructor(props) {
@@ -22,13 +23,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          Learn React
+          WELCOME TO ALCOO!
+          <div className="App-box">
+            <HomepageBox />
+          </div>
         </header>
-        <p className="App-intro">{this.state.apiResponse}</p>
       </div>
     );
   }
