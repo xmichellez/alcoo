@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          WELCOME TO ALCOO!
+          WELCOME TO ALC∞!!
           <div className="App-box">
             <HomepageBox />
           </div>
