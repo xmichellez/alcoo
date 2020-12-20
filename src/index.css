@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+/* import Dosis regular (400), semibold (600), bold (700), and extrabold (800) */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700;800&display=swap');
 
 body {
   background-color: #F4FFFD;

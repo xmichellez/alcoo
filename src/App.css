@@ -1,12 +1,11 @@
+@import './index.css';
+
 /* Homepage styling */
-* {
-  background-color: #F4FFFD;
-}
+
 .App {
   text-align: center;
   background-color: #F4FFFD;
   font-family: Dosis, sans-serif;
-  font-weight: 600;
   color: #343434;;
 }
 
@@ -17,7 +16,7 @@
 } */
 
 .App-header {
-  font-weight: bold;
+  font-weight: 800;
   font-size: 60px;
 
   min-height: 100vh;
@@ -42,11 +41,13 @@
 .App-box h1 {
   font-size: inherit;
   font-weight: inherit;
+  background-color: white;
   color: #FFA69E;
   margin-bottom: 35px;
+  font-weight: 600;
 }
 .App-box .col-sm-3 {
-  padding: 40px 0;
+  padding: 10px 0;
   margin: 30px auto;
 
   border-radius: 21px;
@@ -58,14 +59,30 @@ a, a:hover, a:focus, a:active {
   color: inherit !important;
 }
 .App-box .homepage-button {
+  padding: 40px 0;
   font-size: inherit;
-  font-weight: inherit;
+  font-weight: 600;
   color: #343434;
   background-color:  rgba(255, 243, 142, 0.7);
 }
 .App-box .homepage-button:hover {
   cursor: pointer;
   background-color: rgba(255, 243, 142, 0.5);
+}
+
+/* join and create boxes */
+.back-arrow {
+  float: left;
+  padding: 25px;
+  font-size: 30px;
+  color: #343434;
+}
+.join-button {
+  background-color: #2F3061;
+  border-radius: 10px;
+  color: white;
+  float: right;
+  padding: 5px 10px;
 }
 
 /* @keyframes App-logo-spin {
@@ -78,8 +95,69 @@ a, a:hover, a:focus, a:active {
 } */
 
 /* Board styling */
+.top-bar {
+  margin-top: 15px;
+  margin-bottom: -60px;
+}
+#settings-icon {
+  text-align: left;
+  margin-left: 30px;
+  font-size: 50px;
+}
+#dice-icon {
+  text-align: right;
+  font-size: 80px;
+}
+
 .board-div {
+  margin: 0;
   display: block;
-  padding: 50px 50px 0 50px;
-  width: 100%;
+  padding: 80px 0 0 80px;
+}
+/* Sidebar with players */
+.sidebar-column {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border-left: 15px solid #FFF38E;
+  
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+.party-name-div {
+  padding: 15px 15px 15px 35px;
+  text-align: center;
+}
+.party-name {
+  font-size: 30px;
+  font-weight: 800;
+  color: #2F3061;
+}
+.players-div {
+  margin: 5px 30px 5px 45px;
+}
+.profile {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  background-color: #FFA69E;
+  border-radius: 10px;
+  color: #2F3061;
+  text-align: left;
+}
+.profile .picture {
+  background-color: white;
+  color: white;
+  border-radius: 10px;
+}
+.profile .name {
+  font-size: 25px;
+  font-weight: 600;
+}
+.profile .drinks {
+  font-size: 20px;
+  font-weight: 500;
 }

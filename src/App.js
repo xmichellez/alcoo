@@ -7,7 +7,11 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import HomepageBox from './components/homepageBox';
+import JoinBox from './components/joinBox';
+import CreateBox from './components/createBox';
 import AlcooBoard from './components/Board';
+import Sidebar from './components/playerSidebar';
+import Settings from './components/Settings';
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +25,12 @@ class App extends Component {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/settings">
+            <Settings />
+          </Route>
+          <Route path="/board">
+            <Board />
+          </Route>
           <Route path="/create">
             <Create />
           </Route>
@@ -40,7 +50,7 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        WELCOME TO ALC∞!!
+        WELCOME TO ALC∞
         <div className="App-box">
           <HomepageBox />
         </div>
@@ -50,20 +60,25 @@ function Home() {
 }
 function Join() {
   return (
-    <div className="App">
-      <AlcooBoard />
-    </div>
+    <JoinBox />
   )
 }
 function Create() {
   return (
+    <CreateBox />
+  )
+}
+function Board() {
+  return (
     <div className="App">
-      <header className="App-header">
-        you are creating lol
-        <div className="App-box">
-          <HomepageBox />
+      <div className="row">
+        <div className="col-9" id="board">
+          <AlcooBoard />
         </div>
-      </header>
+        <div className="col" id="sidebar">
+          <Sidebar />
+        </div>
+      </div>
     </div>
   )
 }

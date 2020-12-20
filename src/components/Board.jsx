@@ -1,4 +1,5 @@
 import React from 'react';
+import BoardTopBar from './boardTopBar';
 
 const cellStyle0 = {
     border: 'none',
@@ -138,12 +139,13 @@ export class AlcooBoard extends React.Component {
     }
 
     return (
-      <div class="board-div">
-        <table id="board">
-          <tbody>{body}</tbody>
-        </table>
-        {/* {winner} */}
-      </div>
+        <div>
+            <BoardTopBar/>
+            <div class="board-div">
+                <tbody>{body}</tbody>
+                {/* {winner} */}
+            </div>
+        </div>
     );
   }
 }
