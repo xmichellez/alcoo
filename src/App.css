@@ -1,3 +1,7 @@
+/* Homepage styling */
+* {
+  background-color: #F4FFFD;
+}
 .App {
   text-align: center;
   background-color: #F4FFFD;
@@ -49,6 +53,10 @@
   outline: 6px dashed #FFA69E;
   outline-offset: 15px;
 }
+a, a:hover, a:focus, a:active {
+  text-decoration: none !important;
+  color: inherit !important;
+}
 .App-box .homepage-button {
   font-size: inherit;
   font-weight: inherit;
@@ -60,7 +68,6 @@
   background-color: rgba(255, 243, 142, 0.5);
 }
 
-
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -69,3 +76,10 @@
     transform: rotate(360deg);
   }
 } */
+
+/* Board styling */
+.board-div {
+  display: block;
+  padding: 50px 50px 0 50px;
+  width: 100%;
+}

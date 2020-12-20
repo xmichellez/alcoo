@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
+import {
+    Link
+  } from "react-router-dom";
 
 class HomepageBox extends Component {
     constructor(props) {
         super(props);
-        this.clickJoin = this.clickJoin.bind(this);
-        this.clickCreate = this.clickCreate.bind(this);
-    }
-
-    clickJoin() {
-        this.clickJoin = this.clickJoin.bind(this);
-        console.log('join was clicked');
-    }
-    clickCreate() {
-        this.clickCreate = this.clickCreate.bind(this);
-        console.log('create was clicked');
     }
 
     render() { 
@@ -22,12 +14,16 @@ class HomepageBox extends Component {
             <h1> everyone can be an alcoholic but not everyone can be well-read. we can't fix that last one but at least we can make you drink lol</h1>
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-sm-3 homepage-button" onClick={this.clickJoin}>
-                        join a<br></br>party
-                    </div>
-                    <div class="col-sm-3 homepage-button" onClick={this.clickCreate}>
-                        create a<br></br>party
-                    </div>
+                    <Link to="/join" class="col-sm-3">
+                        <div class="homepage-button">
+                            join a<br></br>party
+                        </div>
+                    </Link>
+                    <Link to="/create" class="col-sm-3">
+                        <div class="homepage-button">
+                            create a<br></br>party
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
