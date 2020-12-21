@@ -12,6 +12,16 @@ import CreateBox from './components/createBox';
 import AlcooBoard from './components/Board';
 import Sidebar from './components/playerSidebar';
 import Settings from './components/Settings';
+import Alcoo from './Game';
+import { SocketIO } from "boardgame.io/multiplayer";
+import { Client } from "boardgame.io/react";
+
+
+const AlcooClient = Client({
+  game: Alcoo,
+  board: AlcooBoard,
+  multiplayer: SocketIO({ server: "localhost:8000" }),
+});
 
 class App extends Component {
   constructor(props) {
@@ -73,7 +83,8 @@ function Board() {
     <div className="App">
       <div className="row">
         <div className="col-9" id="board">
-          <AlcooBoard />
+          {/* <AlcooBoard /> */}
+          <AlcooClient />
         </div>
         <div className="col" id="sidebar">
           <Sidebar />
