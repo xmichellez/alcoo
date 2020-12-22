@@ -17,7 +17,7 @@ import { Client } from "boardgame.io/react";
 import { SocketIO } from "boardgame.io/multiplayer";
 import { LobbyClient } from "boardgame.io/client";
 
-const SERVER = 'localhost:8000';
+const SERVER = 'http://localhost:8000';
 
 console.log(Alcoo);
 
