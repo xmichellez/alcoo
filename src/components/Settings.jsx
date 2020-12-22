@@ -13,14 +13,14 @@ class Settings extends Component {
     render() { 
         return (
             <div className="App">
-            <Link to="/board" class="back-arrow"><FontAwesomeIcon icon={faArrowLeft}/></Link>
+            <Link to="/board" className="back-arrow"><FontAwesomeIcon icon={faArrowLeft}/></Link>
             <header className="App-header">
                 PARTY SETTINGS:
                 <div className="App-box">
                     <div>
                         <h1> party name: sjdfhjksdhfdkjshfjsdkhfdjkshfjkdhsf</h1>
-                        <div class="container">
-                        <Link to="/"><div class="join-button">end party early :(</div></Link>
+                        <div className="container">
+                        <Link to="/"><div className="join-button">end party early :(</div></Link>
                         </div>
                     </div>
                 </div>

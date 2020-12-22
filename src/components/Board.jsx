@@ -141,7 +141,7 @@ export class AlcooBoard extends React.Component {
     return (
         <div>
             <BoardTopBar/>
-            <div class="board-div">
+            <div className="board-div">
                 <tbody>{body}</tbody>
                 {/* {winner} */}
             </div>

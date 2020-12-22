@@ -12,15 +12,15 @@ class HomepageBox extends Component {
         return (
         <div>
             <h1> everyone can be an alcoholic but not everyone can be well-read. we can't fix that last one but at least we can make you drink lol</h1>
-            <div class="container">
-                <div class="row align-items-center">
-                    <Link to="/join" class="col-sm-3">
-                        <div class="homepage-button">
+            <div className="container">
+                <div className="row align-items-center">
+                    <Link to="/join" className="col-sm-3">
+                        <div className="homepage-button">
                             join a<br></br>party
                         </div>
                     </Link>
-                    <Link to="/create" class="col-sm-3">
-                        <div class="homepage-button">
+                    <Link to="/create" className="col-sm-3">
+                        <div className="homepage-button">
                             create a<br></br>party
                         </div>
                     </Link>
