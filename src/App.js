@@ -43,7 +43,7 @@ export class Match extends Component {
     let match;
     let matchID;
     try {
-      match = await this.props.LobbyClient.getMatch("alcoo", matchID);
+      match = await this.props.LobbyClient.getMatch("default", matchID);
     } catch (e) {
       alert(
         "There was a problem. Make sure you have the right url and try again."
@@ -68,7 +68,7 @@ export class Match extends Component {
 
     let resp;
     try {
-      resp = await this.props.LobbyClient.joinMatch("alcoo", matchID, {
+      resp = await this.props.LobbyClient.joinMatch("default", matchID, {
         playerID,
         playerName: playerID,
       });
@@ -118,7 +118,7 @@ class App extends Component {
   async createMatch(){
     let matchID;
     try {
-      const resp = await this.LobbyClient.createMatch("alcoo", {
+      const resp = await this.LobbyClient.createMatch("default", {
         // This is the maximum number of players. We will adjust the turns if less players
         // join.
         numPlayers: 8,

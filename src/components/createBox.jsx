@@ -4,14 +4,14 @@ import {
   } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import avatar1 from '../public/avatar1.png';
-import avatar2 from '../public/avatar2.png';
-import avatar3 from '../public/avatar3.png';
-import avatar4 from '../public/avatar4.png';
-import avatar5 from '../public/avatar5.png';
-import avatar6 from '../public/avatar6.png';
-import avatar7 from '../public/avatar7.png';
-import avatar8 from '../public/avatar8.png';
+import avatar1 from '../images/avatar1.png';
+import avatar2 from '../images/avatar2.png';
+import avatar3 from '../images/avatar3.png';
+import avatar4 from '../images/avatar4.png';
+import avatar5 from '../images/avatar5.png';
+import avatar6 from '../images/avatar6.png';
+import avatar7 from '../images/avatar7.png';
+import avatar8 from '../images/avatar8.png';
 
 class CreateBox extends Component {
     constructor(props) {
