@@ -89,7 +89,7 @@ export class Match extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <this.CantStopClient
+        <this.AlcooClient
           playerID={this.state.playerID}
           matchID={this.props.matchID}
           credentials={this.state.playerCredentials}
