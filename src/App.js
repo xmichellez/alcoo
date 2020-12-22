@@ -19,6 +19,8 @@ import { LobbyClient } from "boardgame.io/client";
 
 const SERVER = 'localhost:8000';
 
+console.log(Alcoo);
+
 export class Match extends Component {
   constructor(props) {
     super(props);
