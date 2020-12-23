@@ -152,7 +152,8 @@ class App extends Component {
                   action={async () => {
                     const matchID = await this.createMatch();
                     if (matchID != null) {
-                      window.location.replace(`${SERVER}/board/${matchID}`);
+                      // window.location.replace(`${SERVER}/board/${matchID}`);
+                      window.location.replace(`http://localhost:3000/board/${matchID}`);
                     }
                   }}
                 >
@@ -167,7 +168,8 @@ class App extends Component {
             render={(props) => {
               const { matchID } = props.match.params;
               return (
-                <Board {...{ matchID, lobbyClient }}/>
+                // <Match {...{ matchID, lobbyClient }}/>
+                <Board />
               );
             }}
           />

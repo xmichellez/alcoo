@@ -17,7 +17,21 @@ import avatar8 from '../images/avatar8.png';
 class JoinBox extends Component {
     constructor(props) {
         super(props);
+        this.state = {value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+    handleSubmit(event) {
+        alert('A code was submitted: ' + this.state.value);
+        window.location.replace(`http://localhost:3000/board/${this.state.value}`);
+        event.preventDefault();
+      }
 
     render() { 
         return (
@@ -49,9 +63,10 @@ class JoinBox extends Component {
                                 </div>
                             </div>
                             <div className="col right-column">
-                                <form>
+                                <form onSubmit={this.handleSubmit}>
                                     <label> 
-                                        <input className="main-code-input-field" type="text" name="join-name" placeholder="your display name" />
+                                        <input className="main-code-input-field" type="text" name="join-name" placeholder="your display name" value={this.state.value} onChange={this.handleChange} />
+                                        <input type="button" value="Submit" />
                                     </label>
                                 </form>
                                 <Link to="/board"><div className="join-button">join party</div></Link>
