@@ -14,7 +14,7 @@ import Sidebar from './components/playerSidebar';
 import Settings from './components/Settings';
 
 import { Client } from "boardgame.io/react";
-import { SocketIO } from "boardgame.io/multiplayer";
+import { Local, SocketIO } from "boardgame.io/multiplayer";
 import { LobbyClient } from "boardgame.io/client";
 
 const SERVER = 'http://localhost:8000';
@@ -24,7 +24,7 @@ console.log(Alcoo);
 export class Match extends Component {
   constructor(props) {
     super(props);
-    this.joinMatch(props.matchID);
+    this.joinMatch(props.matchID, props.lobbyClient);
     this.state = {
       playerID: undefined,
       playerCredentials: undefined,
@@ -33,17 +33,17 @@ export class Match extends Component {
       game: Alcoo,
       numPlayers: 8,
       board: AlcooBoard,
-      multiplayer: SocketIO({ server: SERVER }),
-      // debug: true,
+      multiplayer: Local(),
+      debug: false,
     });
   }
 
-  async joinMatch() {
+  async joinMatch(matchID, LobbyClient) {
     // Get the game to know how many players have joined already.
     let match;
-    let matchID;
+    
     try {
-      match = await this.props.LobbyClient.getMatch("default", matchID);
+      match = await LobbyClient.getMatch("default", matchID);
     } catch (e) {
       alert(
         "There was a problem. Make sure you have the right url and try again."
@@ -68,7 +68,7 @@ export class Match extends Component {
 
     let resp;
     try {
-      resp = await this.props.LobbyClient.joinMatch("default", matchID, {
+      resp = await LobbyClient.joinMatch("default", matchID, {
         playerID,
         playerName: playerID,
       });
@@ -82,6 +82,8 @@ export class Match extends Component {
       playerCredentials,
       playerID,
     });
+    console.log(this.AlcooClient);
+    console.log(AlcooBoard);
   }
   
   render() {
@@ -99,7 +101,6 @@ export class Match extends Component {
   }
 }
 
-// *****uhhhh is this real JS
 const DoAction = (props) => {
   useEffect(() => {
     props.action();
@@ -137,8 +138,6 @@ class App extends Component {
     const lobbyClient = this.LobbyClient;
     return (
       <Router>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/settings">
             <Settings />
@@ -157,7 +156,6 @@ class App extends Component {
                     }
                   }}
                 >
-                  {/* We need this <div> because our <Page> is not super happy with strings */}
                   <div>Creating Match...</div>
                 </DoAction>
               );
@@ -168,8 +166,7 @@ class App extends Component {
             render={(props) => {
               const { matchID } = props.match.params;
               return (
-                // <Match {...{ matchID, lobbyClient }}/>
-                <Board />
+                <Match {...{ matchID, lobbyClient }}/>
               );
             }}
           />
@@ -208,20 +205,6 @@ function Join() {
 function Create() {
   return (
     <CreateBox />
-  )
-}
-function Board() {
-  return (
-    <div className="App">
-      <div className="row">
-        <div className="col-9" id="board">
-          <AlcooBoard />
-        </div>
-        <div className="col" id="sidebar">
-          <Sidebar />
-        </div>
-      </div>
-    </div>
   )
 }
 
