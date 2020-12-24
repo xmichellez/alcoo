@@ -20,10 +20,13 @@
 
 import { INVALID_MOVE } from "boardgame.io/core";
 
+const setup = {
+  playerInfo: {},
+}
+
 const Alcoo = {
   name: 'alcoo',
-  setup: () => ({ cells: Array(9).fill(null) }),
-
+  setup,
   turn: {
     moveLimit: 1,
   },
