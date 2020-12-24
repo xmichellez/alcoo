@@ -78,6 +78,7 @@ export class Match extends Component {
 
     // If we get here it means we successfully joined the match.
     playerCredentials = resp.playerCredentials.toString();
+    console.log(playerCredentials + playerID);
     this.setState({
       playerCredentials,
       playerID,
