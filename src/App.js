@@ -19,8 +19,6 @@ import { LobbyClient } from "boardgame.io/client";
 
 const SERVER = 'http://localhost:8000';
 
-console.log(Alcoo);
-
 export class Match extends Component {
   constructor(props) {
     super(props);
@@ -78,13 +76,13 @@ export class Match extends Component {
 
     // If we get here it means we successfully joined the match.
     playerCredentials = resp.playerCredentials.toString();
-    console.log(playerCredentials + playerID);
+    // console.log(playerCredentials + playerID);
     this.setState({
       playerCredentials,
       playerID,
     });
-    console.log(this.AlcooClient);
-    console.log(AlcooBoard);
+    // console.log(this.AlcooClient);
+    // console.log(AlcooBoard);
   }
   
   render() {
@@ -126,7 +124,7 @@ class App extends Component {
         numPlayers: 8,
       });
       matchID = resp.matchID;
-      console.log(matchID);
+      // console.log(matchID);
     } catch (e) {
       alert("There was a problem creating the match. Please try again.");
       return;

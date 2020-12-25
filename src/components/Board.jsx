@@ -144,7 +144,7 @@ export class AlcooBoard extends Component {
         <div className="row">
           <div className="col-9" id="board">
             <div>
-                <BoardTopBar/>
+                <BoardTopBar boardProps = {this.props} />
                 <div className="board-div">
                     <tbody>{body}</tbody>
                     {/* {winner} */}
@@ -152,7 +152,7 @@ export class AlcooBoard extends Component {
             </div>
           </div>
           <div className="col" id="sidebar">
-            <Sidebar />
+            <Sidebar boardProps = {this.props} />
           </div>
         </div>
       </div>
