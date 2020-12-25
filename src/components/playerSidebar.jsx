@@ -14,12 +14,8 @@ class Sidebar extends Component {
             </div>
             <div className="players-div">
                 {playerProfiles()}
-                {playerProfiles()}
-                {playerProfiles()}
-                {playerProfiles()}
-            </div>
-            <div className="players-div">
-                <button className="profile" onClick={this.props.boardProps.moves.startMatch} >start game</button>
+                
+                <button className="drink-button" onClick={this.props.boardProps.moves.startMatch} >START GAME</button>
             </div>
         </div>
         )

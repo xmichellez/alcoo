@@ -1,5 +1,9 @@
 @import './index.css';
 
+button {
+  border: none;
+}
+
 /* Homepage styling */
 
 .App {
@@ -227,4 +231,19 @@ a, a:hover, a:focus, a:active {
 .profile .drinks {
   font-size: 20px;
   font-weight: 500;
+}
+.drink-button {
+  padding: 10px;
+  margin: 20px -15px !important;
+  width: 110%;
+  /* bottom: 0;
+  position: fixed; */
+
+  background-color: #2F3061;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 25px;
 }
