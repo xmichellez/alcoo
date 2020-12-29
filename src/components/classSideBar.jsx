@@ -13,26 +13,18 @@ class CSidebar extends Component {
         super(props);
     }
 
-    // const playerID = parseInt(props.boardProps.ctx.playerID);
-    // const playerInfos = props.boardProps.G.playerInfos;
-    // let playerstorender;
-
-    // useEffect(() => {
-    //     if (!playerInfos.hasOwnProperty(playerID)) {
-    //         console.log(props.boardProps.G);
-    //         props.boardProps.moves.initializePlayer();
-    //         console.log(props.boardProps.G);
-
-    //         // console.log(props.boardProps.G.playerInfos[0]);
-    //         const players = Object.entries(props.boardProps.G.playerInfos);
-    //         // console.log(players);
-
-    //         playerstorender = players.map((player) => (
-    //             <playerProfiles player={player} />
-    //         ));
-    //     }
-    // }, [props.boardProps.moves, playerID]);
     render() {
+        const playerID = parseInt(this.props.boardProps.ctx.playerID);
+        const playerInfos = this.props.boardProps.G.playerInfos;
+        const players = Object.entries(playerInfos);
+
+        var render = null;
+
+        if (players[0] != null) {
+            render = players.map((player) => (playerProfiles(player))
+            );
+        }
+
         return (
         <div className="sidebar-column">
             <div className="party-name-div">
@@ -41,7 +33,8 @@ class CSidebar extends Component {
                 </div>
             </div>
             <div className="players-div">
-                {activePlayers(this.props.boardProps)}
+                {/* {activePlayers(this.props.boardProps)} */}
+                {render}
                 <button className="drink-button" onClick={this.props.boardProps.moves.initializePlayer} >JOIN GAME</button>
                 <button className="drink-button" onClick={this.props.boardProps.moves.startMatch} >START GAME</button>
                 {/* {playerstorender} */}
@@ -58,34 +51,39 @@ function partyName() {
 }
 function playerProfiles(props) {
     console.log("hello from player profiles")
+    const profile = props[1];
+    console.log(profile);
+    console.log(profile.name);
     return(
         <div className="profile row">
             <div className="col-3">
-                <img src={loadImage(props.avatar)} alt="avatar" className="picture" />
+                <img src={loadImage(profile.avatar)} alt="avatar" className="picture" />
             </div>
             <div className="col">
-                <div className="name">{props.name}</div>
-                <div className="drinks">drinks: {props.drinks}</div>
+                <div className="name">{profile.name}</div>
+                <div className="drinks">drinks: {profile.drinks}</div>
             </div>
         </div>
     );
 }
 
-function activePlayers(props) {
-    const playerID = parseInt(props.ctx.playerID);
-    const playerInfos = props.G.playerInfos;
+// function activePlayers(props) {
+//     const playerID = parseInt(props.ctx.playerID);
+//     const playerInfos = props.G.playerInfos;
 
-    console.log(playerInfos);
+//     console.log(playerInfos);
 
-    const players = Object.entries(playerInfos);
-    console.log(players);
+//     const players = Object.entries(playerInfos);
+//     console.log(players);
 
-    const torender = players.map((player) => { 
-        playerProfiles(playerInfos[player])
-    }
-    
-    return torender;
-}
+//     // const render = players.map((player) => { 
+//     //     playerProfiles(player)
+//     // });
+//     if (players[0] != null) {
+//         return playerProfiles(players[0]);
+//     }
+//     return;
+// }
 
 const images = {
     avatar1: require('../images/avatar1.png'),

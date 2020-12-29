@@ -66,6 +66,7 @@ const Alcoo = {
                 
                 G.playerInfos[player] = object;
                 G.playerInfos[2] = object;
+                G.playerInfos[3] = object;
 
                 // console.log(G.playerInfos[player]);
                 // console.log(Object.entries(G.playerInfos));
