@@ -70,6 +70,7 @@ export class Match extends Component {
         playerID,
         playerName: playerID,
       });
+
     } catch (e) {
       alert("Could not join the game. Try again.");
     }
@@ -81,6 +82,10 @@ export class Match extends Component {
       playerCredentials,
       playerID,
     });
+
+    //pass in board moves??????
+    // this.props.moves.initializePlayer();
+    
     // console.log(this.AlcooClient);
     // console.log(AlcooBoard);
   }

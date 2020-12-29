@@ -53,12 +53,14 @@ const Alcoo = {
         stages: {
           setup: {
             moves: {
-              initializePlayer: (G, ctx, name, avatar) => {
+              initializePlayer: (G, ctx) => {
+                console.log("intiialize player " + ctx.playerID)
                 G.playerInfos[ctx.playerID] = {
                   name: 'horleb',
                   avatar: '1',
                   drinks: 0,
                 };
+                console.log(Array.from(G.playerInfos));
               },
               startMatch: (G, ctx) => {
                 // if (ctx.playerID !== "0") {
