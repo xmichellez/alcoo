@@ -16,14 +16,15 @@ class BoardTopBar extends Component {
                 <Link to="/settings"><FontAwesomeIcon icon={faCog}/></Link>
             </div>
             <div className="col" id="dice-icon">
-                {returnDie(this.props.boardProps.G.diceValue)}
+                {returnDie(this.props.boardProps.G.diceValue, this.props.boardProps.G)}
             </div>
         </div>
         )
     }
 }
 
-function returnDie(value) {
+function returnDie(value, G) {
+    console.log(G);
 
     if (value === 1) {
         return <FontAwesomeIcon icon={faDiceOne}/>

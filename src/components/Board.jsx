@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BoardTopBar from './boardTopBar';
 import Sidebar from './playerSidebar';
+import CSidebar from './classSideBar';
 
 const cellStyle0 = {
     border: 'none',
@@ -152,7 +153,8 @@ export class AlcooBoard extends Component {
             </div>
           </div>
           <div className="col" id="sidebar">
-            <Sidebar boardProps = {this.props} />
+            {/* <Sidebar boardProps = {this.props} /> */}
+            <CSidebar boardProps = {this.props} />
           </div>
         </div>
       </div>

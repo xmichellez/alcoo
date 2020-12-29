@@ -54,13 +54,26 @@ const Alcoo = {
           setup: {
             moves: {
               initializePlayer: (G, ctx) => {
-                console.log("intiialize player " + ctx.playerID)
-                G.playerInfos[ctx.playerID] = {
+                console.log("G at the beginning of initialize player is" + G);
+                // console.log("initialize player " + ctx.playerID)
+                const player = parseInt(ctx.playerID);
+                var object = {
+                  id: player,
                   name: 'horleb',
-                  avatar: '1',
+                  avatar: 'avatar1',
                   drinks: 0,
                 };
-                console.log(Array.from(G.playerInfos));
+                
+                G.playerInfos[player] = object;
+                G.playerInfos[2] = object;
+
+                // console.log(G.playerInfos[player]);
+                // console.log(Object.entries(G.playerInfos));
+
+                var G_str = JSON.stringify(G, null, 4); 
+
+                console.log(G_str);
+
               },
               startMatch: (G, ctx) => {
                 // if (ctx.playerID !== "0") {

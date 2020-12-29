@@ -9,13 +9,25 @@ import avatar7 from '../images/avatar7.png';
 import avatar8 from '../images/avatar8.png';
 
 function Sidebar (props) {
-    const playerID = props.boardProps.ctx.playerID;
+    const playerID = parseInt(props.boardProps.ctx.playerID);
     const playerInfos = props.boardProps.G.playerInfos;
+    let playerstorender;
+
     useEffect(() => {
         if (!playerInfos.hasOwnProperty(playerID)) {
+            console.log(props.boardProps.G);
             props.boardProps.moves.initializePlayer();
+            console.log(props.boardProps.G);
+
+            // console.log(props.boardProps.G.playerInfos[0]);
+            const players = Object.entries(props.boardProps.G.playerInfos);
+            // console.log(players);
+
+            playerstorender = players.map((player) => (
+                <playerProfiles player={player} />
+            ));
         }
-    }, [playerInfos, props.boardProps.moves, playerID]);
+    }, [props.boardProps.moves, playerID]);
       
     return (
     <div className="sidebar-column">
@@ -27,7 +39,8 @@ function Sidebar (props) {
         <div className="players-div">
             {/* <button className="drink-button" onClick={props.boardProps.moves.initializePlayer} >JOIN GAME</button> */}
             <button className="drink-button" onClick={props.boardProps.moves.startMatch} >START GAME</button>
-            {activePlayers(props)}
+            {/* {activePlayers(props.boardProps)} */}
+            {playerstorender}
         </div>
     </div>
     )
@@ -53,8 +66,14 @@ export function playerProfiles(props) {
 }
 
 export function activePlayers(props) {
-    const players = Array.from(props.boardProps.G.playerInfos);
-    // console.log(players);
+    const playerID = parseInt(props.ctx.playerID);
+    const playerInfos = props.G.playerInfos;
+
+    console.log(playerInfos[playerID]);
+
+    const players = Object.entries(playerInfos);
+    console.log(players);
+
     players.map((player) => (
         <playerProfiles player={player} />
     ));
