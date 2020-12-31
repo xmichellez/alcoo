@@ -8,7 +8,7 @@ import avatar6 from '../images/avatar6.png';
 import avatar7 from '../images/avatar7.png';
 import avatar8 from '../images/avatar8.png';
 
-class CSidebar extends Component {
+class Sidebar extends Component {
     constructor(props) {
         super(props);
     }
@@ -35,7 +35,7 @@ class CSidebar extends Component {
             <div className="players-div">
                 {/* {activePlayers(this.props.boardProps)} */}
                 {render}
-                <button className="drink-button" onClick={this.props.boardProps.moves.initializePlayer} >JOIN GAME</button>
+                {/* <button className="drink-button" onClick={this.props.boardProps.moves.initializePlayer} >JOIN GAME</button> */}
                 <button className="drink-button" onClick={this.props.boardProps.moves.startMatch} >START GAME</button>
                 {/* {playerstorender} */}
             </div>
@@ -103,4 +103,4 @@ export function loadImage(imageName) {
     return;
 }
   
-export default CSidebar;
+export default Sidebar;

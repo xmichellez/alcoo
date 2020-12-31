@@ -6,11 +6,8 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import HomepageBox from './components/homepageBox';
-import JoinBox from './components/joinBox';
-import CreateBox from './components/createBox';
 import Alcoo from "./Game";
 import AlcooBoard from './components/Board';
-import Sidebar from './components/playerSidebar';
 import Settings from './components/Settings';
 
 import { Client } from "boardgame.io/react";
@@ -169,12 +166,6 @@ class App extends Component {
               );
             }}
           />
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/join">
-            <Join />
-          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -186,24 +177,7 @@ class App extends Component {
 
 function Home() {
   return (
-    <div className="App">
-      <header className="App-header">
-        WELCOME TO ALC∞
-        <div className="App-box">
-          <HomepageBox />
-        </div>
-      </header>
-    </div>
-  )
-}
-function Join() {
-  return (
-    <JoinBox />
-  )
-}
-function Create() {
-  return (
-    <CreateBox />
+    <HomepageBox />
   )
 }
 

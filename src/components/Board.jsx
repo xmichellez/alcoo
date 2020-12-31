@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import BoardTopBar from './boardTopBar';
-import Sidebar from './playerSidebar';
-import CSidebar from './classSideBar';
+import Sidebar from './Sidebar';
+import PlayerBox from './playerBox';
 
 const cellStyle0 = {
     border: 'none',
@@ -139,26 +139,29 @@ export class AlcooBoard extends Component {
       }
       body.push(<tr key={i}>{cells}</tr>);
     }
+    console.log(this.props);
 
     return (
-        <div className="App">
-        <div className="row">
-          <div className="col-9" id="board">
-            <div>
-                <BoardTopBar boardProps = {this.props} />
-                <div className="board-div">
-                    <tbody>{body}</tbody>
-                    {/* {winner} */}
+        <div>
+            <PlayerBox boardProps = {this.props} />
+            <div className="App">
+                <div className="row">
+                    <div className="col-9" id="board">
+                        <div>
+                            <BoardTopBar boardProps = {this.props} />
+                            <div className="board-div">
+                                <tbody>{body}</tbody>
+                                {/* {winner} */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col" id="sidebar">
+                        {/* <Sidebar boardProps = {this.props} /> */}
+                        <Sidebar boardProps = {this.props} />
+                    </div>
                 </div>
             </div>
-          </div>
-          <div className="col" id="sidebar">
-            {/* <Sidebar boardProps = {this.props} /> */}
-            <CSidebar boardProps = {this.props} />
-          </div>
         </div>
-      </div>
-
     );
   }
 }

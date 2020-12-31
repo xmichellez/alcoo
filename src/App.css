@@ -31,9 +31,7 @@ button {
 }
 .App-box {
   background-color: white;
-  margin-top: 10px;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin: 10px 300px 30px 300px;
   padding: 50px 100px;
   border-radius: 21px;
 
@@ -50,38 +48,60 @@ button {
   margin-bottom: 35px;
   font-weight: 600;
 }
-.App-box .col-sm-3 {
-  padding: 10px 0;
-  margin: 30px auto;
-
-  border-radius: 21px;
-  outline: 6px dashed #FFA69E;
-  outline-offset: 15px;
-}
 a, a:hover, a:focus, a:active {
   text-decoration: none !important;
   color: inherit !important;
 }
-.App-box .homepage-button {
-  padding: 40px 0;
-  font-size: inherit;
-  font-weight: 600;
-  color: #343434;
-  background-color:  rgba(255, 243, 142, 0.7);
-}
-.App-box .homepage-button:hover {
-  cursor: pointer;
-  background-color: rgba(255, 243, 142, 0.5);
-}
+.join-button {
+  background-color: #2F3061;
+  border-radius: 21px;
+  color: white;
+  border: none;
 
+  margin: 10px 15px;
+  padding: 2px 20px 8px 20px;
+  text-align: center;
+  font-weight: 600;
+}
+.join-button:hover {
+  cursor: pointer;
+  background-color: #81F0E5;
+}
+.create-button {
+  background-color: white;
+  margin: 10px 300px 0 300px;
+  padding: 25px;
+  border-radius: 21px;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  box-shadow: -10px 10px #2F3061;
+}
+.create-button:hover {
+  background-color: #81F0E5;
+  color: white;
+}
+/* .create-button {
+  background-color: #FFF38E;
+  border-radius: 21px;
+  color: black;
+  border: none;
+
+  margin: 10px 15px;
+  padding: 2px 20px 8px 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+}
+.create-button:hover {
+  background-color: #FFA69E;
+} */
 
 /* join and create boxes */
 .join-create-box {
   background-color: white;
-  margin-top: 10px;
-  margin-left: 300px;
-  margin-right: 300px;
-  padding: 50px 60px;
+  padding: 50px 100px;
   border-radius: 21px;
 
   font-size: 30px;
@@ -91,7 +111,6 @@ a, a:hover, a:focus, a:active {
 }
 .join-create-box h1 {
   font-size: inherit;
-  font-weight: inherit;
   background-color: white;
   color: #2F3061;
   margin-bottom: 35px;
@@ -104,9 +123,6 @@ a, a:hover, a:focus, a:active {
   padding: 25px;
   font-size: 30px;
   color: #343434;
-}
-.join-create-box .container {
-  margin-top: 25px;
 }
 .avatar-div {
   background-color: #FFA69E;
@@ -142,19 +158,6 @@ a, a:hover, a:focus, a:active {
 /* .right-column {
   text-align: left;
 } */
-.join-button {
-  background-color: #2F3061;
-  border-radius: 21px;
-  color: white;
-
-  margin: 10px 15px;
-  padding: 2px 20px 8px 20px;
-  text-align: center;
-}
-.join-create-box .join-button:hover {
-  cursor: pointer;
-  background-color: #81F0E5;
-}
 
 /* @keyframes App-logo-spin {
   from {
