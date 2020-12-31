@@ -32,6 +32,7 @@ export class Match extends Component {
       numPlayers: 8,
       board: AlcooBoard,
       multiplayer: Local(),
+      // multiplayer: SocketIO({ server: SERVER }),
       debug: false,
     });
   }
@@ -82,12 +83,6 @@ export class Match extends Component {
       playerCredentials,
       playerID,
     });
-
-    //pass in board moves??????
-    // this.props.moves.initializePlayer();
-    
-    // console.log(this.AlcooClient);
-    // console.log(AlcooBoard);
   }
   
   render() {

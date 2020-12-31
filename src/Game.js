@@ -6,7 +6,8 @@ const setup = () => {
     playerInfos: {}, 
     currentPositions: {},
     diceValue: 0, 
-    numPlayers: 0
+    numPlayers: 0,
+    partyName: 'alcoo party',
   }
 }
 
