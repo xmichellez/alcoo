@@ -18,9 +18,9 @@ class Settings extends Component {
                 PARTY SETTINGS:
                 <div className="App-box">
                     <div>
-                        <h1> party name: sjdfhjksdhfdkjshfjsdkhfdjkshfjkdhsf</h1>
+                        {/* <h1> party name: sjdfhjksdhfdkjshfjsdkhfdjkshfjkdhsf</h1> */}
                         <div className="container">
-                        <Link to="/"><div className="join-button">end party early :(</div></Link>
+                        <Link to="/"><div className="join-button">leave party early :(</div></Link>
                         </div>
                     </div>
                 </div>

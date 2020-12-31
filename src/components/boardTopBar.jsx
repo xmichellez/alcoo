@@ -12,9 +12,9 @@ class BoardTopBar extends Component {
     render() { 
         return (
         <div className="row top-bar justify-content-between" onClick={this.props.boardProps.moves.rollDie}>
-            <div className="col" id="settings-icon">
+            {/* <div className="col" id="settings-icon">
                 <Link to="/settings"><FontAwesomeIcon icon={faCog}/></Link>
-            </div>
+            </div> */}
             <div className="col" id="dice-icon">
                 {returnDie(this.props.boardProps.G.diceValue, this.props.boardProps.G)}
             </div>

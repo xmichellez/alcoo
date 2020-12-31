@@ -182,6 +182,9 @@ a, a:hover, a:focus, a:active {
   text-align: right;
   font-size: 80px;
 }
+#dice-icon:hover {
+  cursor: pointer;
+}
 .board-div {
   margin: 0;
   display: block;
@@ -196,6 +199,7 @@ a, a:hover, a:focus, a:active {
   border-left: 15px solid #FFF38E;
   
   position: fixed;
+  width: 23%;
   height: 100%;
   z-index: 1;
   top: 0;
@@ -259,4 +263,7 @@ a, a:hover, a:focus, a:active {
 
   font-weight: 700;
   font-size: 25px;
+}
+#i-drank-button {
+  display: none;
 }

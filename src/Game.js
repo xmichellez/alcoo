@@ -54,7 +54,7 @@ const Alcoo = {
         stages: {
           setup: {
             moves: {
-              initializePlayer: (G, ctx, name, avatar) => {
+              initializePlayer: (G, ctx, partyName, name, avatar) => {
                 console.log("G at the beginning of initialize player is" + G);
                 // console.log("initialize player " + ctx.playerID)
                 const player = parseInt(ctx.playerID);
@@ -62,7 +62,11 @@ const Alcoo = {
                 var avatarNum = player + 1;
                 var playerAvatar = "avatar" + avatarNum.toString()
 
-                console.log(playerAvatar);
+                if (ctx.playerID == "0") {
+                  if (partyName) {
+                    G.partyName = partyName;
+                  }
+                }
                 
                 if (name) {
                   playerName = name;
@@ -71,7 +75,6 @@ const Alcoo = {
                   playerAvatar = avatar;
                 }
                 console.log(playerAvatar);
-
 
                 var object = {
                   id: player,

@@ -12,6 +12,11 @@ class Sidebar extends Component {
     constructor(props) {
         super(props);
     }
+    handleStartMatch(props) {
+        props.startMatch();
+        document.getElementById("start-match-button").style.display = "none";
+        document.getElementById("i-drank-button").style.display = "inline-block";
+    }
 
     render() {
         const playerID = parseInt(this.props.boardProps.ctx.playerID);
@@ -29,14 +34,14 @@ class Sidebar extends Component {
         <div className="sidebar-column">
             <div className="party-name-div">
                 <div className="party-name">
-                    {partyName()}
+                    {this.props.boardProps.G.partyName}
                 </div>
             </div>
             <div className="players-div">
                 {/* {activePlayers(this.props.boardProps)} */}
                 {render}
-                {/* <button className="drink-button" onClick={this.props.boardProps.moves.initializePlayer} >JOIN GAME</button> */}
-                <button className="drink-button" onClick={this.props.boardProps.moves.startMatch} >START GAME</button>
+                <button className="drink-button" id="start-match-button" onClick={() => {this.handleStartMatch(this.props.boardProps.moves)}} >START GAME</button>
+                <button className="drink-button" id="i-drank-button" onClick={this.props.boardProps.moves.dronk} >I DRANK</button>
                 {/* {playerstorender} */}
             </div>
         </div>
@@ -44,11 +49,6 @@ class Sidebar extends Component {
     }
 }
 
-function partyName() {
-    return(
-        'zoomer boomer pArtAY'
-    );
-}
 function playerProfiles(props) {
     console.log("hello from player profiles")
     const profile = props[1];

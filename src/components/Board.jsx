@@ -3,6 +3,7 @@ import BoardTopBar from './boardTopBar';
 import Sidebar from './Sidebar';
 import PlayerBox from './playerBox';
 
+
 const cellStyle0 = {
     border: 'none',
     backgroundColor: '#FFA69E',
@@ -156,7 +157,6 @@ export class AlcooBoard extends Component {
                         </div>
                     </div>
                     <div className="col" id="sidebar">
-                        {/* <Sidebar boardProps = {this.props} /> */}
                         <Sidebar boardProps = {this.props} />
                     </div>
                 </div>
@@ -180,6 +180,8 @@ function returnCellStyle(id) {
         return cellStyle3;
     }
 }
+
+export default AlcooBoard;
 
 //   onClick(id) {
 //     this.props.moves.clickCell(id);
@@ -227,8 +229,5 @@ function returnCellStyle(id) {
 //         <h1> hello </h1>
 //       </div>
 //     );
-//   }
-// }
+//  
 
-
-export default AlcooBoard;
