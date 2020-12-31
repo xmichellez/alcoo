@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BoardTopBar from './boardTopBar';
 import Sidebar from './Sidebar';
 import PlayerBox from './playerBox';
+import avatar1_piece from '../images/avatar1_piece.png';
 
 
 const cellStyle0 = {
@@ -43,6 +44,7 @@ const cellStyle3 = {
 
 export class AlcooBoard extends Component {
   onClick(id) {
+    // console.log(window.event.target.id);
     console.log(id);
   }
 
@@ -76,8 +78,9 @@ export class AlcooBoard extends Component {
             for (let j = 0; j < 7; j++) {
                 const pos = 7 * i + j;
                 let thisID = id;
+                let thisIDString = thisID.toString();
                 cells.push(
-                <td style={returnCellStyle(thisID)} key={id} onClick={() => this.onClick(thisID)}>
+                <td style={returnCellStyle(thisID)} key={id} id={thisIDString} onClick={() => this.onClick()}>
                     {cells[pos]}
                 </td>
                 );
@@ -91,8 +94,9 @@ export class AlcooBoard extends Component {
         for (let j = 0; j < 7; j++) {
             const pos = 7 * i + j;
             let thisfrID = thisID;
+            let thisfrIDString = thisfrID.toString();
             cells.push(
-            <td style={returnCellStyle(thisfrID)} key={id} onClick={() => this.onClick(thisfrID)}>
+            <td style={returnCellStyle(thisfrID)} key={id} id={thisfrIDString} onClick={() => this.onClick()}>
                 {cells[pos]}
             </td>
             );
@@ -112,8 +116,9 @@ export class AlcooBoard extends Component {
         }
         const pos = 7 * i + 6;
         let thisID = id;
+        let thisIDString = thisID.toString();
         cells.push(
-            <td style={returnCellStyle(thisID)} key={id} onClick={() => this.onClick(thisID)}>
+            <td style={returnCellStyle(thisID)} key={id} id={thisIDString} onClick={() => this.onClick()}>
                 {cells[pos]}
             </td>
             );
@@ -123,8 +128,9 @@ export class AlcooBoard extends Component {
       else {
         const pos = 7 * i;
         let thisID = id;
+        let thisIDString = thisID.toString();
         cells.push(
-            <td style={returnCellStyle(thisID)} key={id} onClick={() => this.onClick(thisID)}>
+            <td style={returnCellStyle(thisID)} key={id} id={thisIDString} onClick={() => this.onClick()}>
                 {cells[pos]}
             </td>
             );
@@ -151,6 +157,7 @@ export class AlcooBoard extends Component {
                         <div>
                             <BoardTopBar boardProps = {this.props} />
                             <div className="board-div">
+                                <img src={avatar1_piece} alt="avatar1_piece" id="avatar1_piece"/>
                                 <tbody>{body}</tbody>
                                 {/* {winner} */}
                             </div>

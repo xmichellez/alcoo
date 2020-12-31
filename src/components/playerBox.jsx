@@ -3,6 +3,7 @@ import {
     Link
   } from "react-router-dom";
 import Modal from 'react-bootstrap/modal';
+import $ from 'jquery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import avatar1 from '../images/avatar1.png';
@@ -53,7 +54,21 @@ class PlayerBox extends Component {
         this.setState({
             show: false
         });
+        $(function() {
+            var pieceName = avatar + "_piece";
+            var posStart = $('#0').offset();
+
+            $(`#${pieceName}`).css({
+                position: 'absolute',
+                top: 180,
+                left: 145,
+                // top: posStart.top, 
+                // left: posStart.left,
+                display: 'block'
+            });
+        });
     }
+
     ifHost(playerID){
         if(playerID = "0"){
             console.log("inside " + playerID);

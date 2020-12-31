@@ -12,6 +12,11 @@ class Sidebar extends Component {
     constructor(props) {
         super(props);
     }
+
+    onClick(id) {
+        console.log(id);
+    }
+    
     handleStartMatch(props) {
         props.startMatch();
         document.getElementById("start-match-button").style.display = "none";
@@ -33,7 +38,7 @@ class Sidebar extends Component {
         return (
         <div className="sidebar-column">
             <div className="party-name-div">
-                <div className="party-name">
+                <div className="party-name" id="party-name" onClick={() => this.onClick(this.id)}>
                     {this.props.boardProps.G.partyName}
                 </div>
             </div>
